@@ -14,6 +14,9 @@ def load_data():
     transactions.columns = transactions.columns.str.strip()
     products.columns = products.columns.str.strip()
     households.columns = households.columns.str.strip()
+    #fix date column
+    transactions.rename(columns={"PURCHASE_": "DATE"}, inplace=True)
+
 
     # Check column names
     st.subheader("🔎 Checking column names")
