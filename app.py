@@ -10,6 +10,11 @@ def load_data():
     transactions = pd.read_csv("400_transactions.csv")
     products = pd.read_csv("400_products.csv")
     households = pd.read_csv("400_households.csv")
+    # Clean up column names by removing extra spaces
+    transactions.columns = transactions.columns.str.strip()
+    products.columns = products.columns.str.strip()
+    households.columns = households.columns.str.strip()
+
     # Check column names
     st.subheader("🔎 Checking column names")
 
