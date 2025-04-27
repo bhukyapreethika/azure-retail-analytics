@@ -10,6 +10,13 @@ def load_data():
     transactions = pd.read_csv("400_transactions.csv")
     products = pd.read_csv("400_products.csv")
     households = pd.read_csv("400_households.csv")
+    # Check column names
+    st.subheader("🔎 Checking column names")
+
+    st.write("Transactions columns:", transactions.columns.tolist())
+    st.write("Products columns:", products.columns.tolist())
+    st.write("Households columns:", households.columns.tolist())
+
     return transactions, products, households
 
 transactions, products, households = load_data()
